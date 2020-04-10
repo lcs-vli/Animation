@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5490543F24408AD500894FBC /* Sketch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81064A1B1C132DA2007ED524 /* Sketch.swift */; };
 		81064A0A1C130A10007ED524 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81064A091C130A10007ED524 /* AppDelegate.swift */; };
 		81064A0C1C130A10007ED524 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81064A0B1C130A10007ED524 /* ViewController.swift */; };
 		81064A0E1C130A10007ED524 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81064A0D1C130A10007ED524 /* Assets.xcassets */; };
 		81064A111C130A10007ED524 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81064A0F1C130A10007ED524 /* Main.storyboard */; };
-		81064A1C1C132DA2007ED524 /* Sketch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81064A1B1C132DA2007ED524 /* Sketch.swift */; };
 		8134176A2199DBBA003676F3 /* CanvasLiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8188784E2199C7DF008CB375 /* CanvasLiveViewController.swift */; };
 		818878412199C645008CB375 /* CanvasGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8188783A2199C645008CB375 /* CanvasGraphics.framework */; };
 		818878422199C645008CB375 /* CanvasGraphics.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8188783A2199C645008CB375 /* CanvasGraphics.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -389,7 +389,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1110;
 				ORGANIZATIONNAME = "Royal St. George's College";
 				TargetAttributes = {
 					81064A051C130A10007ED524 = {
@@ -446,8 +446,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5490543F24408AD500894FBC /* Sketch.swift in Sources */,
 				81064A0C1C130A10007ED524 /* ViewController.swift in Sources */,
-				81064A1C1C132DA2007ED524 /* Sketch.swift in Sources */,
 				81064A0A1C130A10007ED524 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -595,6 +595,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Animation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -610,6 +611,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Animation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
