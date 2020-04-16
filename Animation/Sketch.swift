@@ -34,11 +34,12 @@ class Sketch : NSObject {
     // This function runs repeatedly, forever, to create the animated effect
     func draw() {
         
+        //three circles going right
         for n in 0...2{
-            
             
             x += 1
             
+            //determines the colors
             if n == 0{
                 canvas.fillColor = black
             } else if n == 1{
@@ -52,10 +53,12 @@ class Sketch : NSObject {
             
         }
         
+        //two circles going left
         for n in 0...1{
             
             x1 -= 1
             
+            //determines the colors
             if n == 0{
                 canvas.fillColor = blue
             } else if n == 1{
