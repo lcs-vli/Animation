@@ -34,6 +34,8 @@ class Sketch : NSObject {
     // This function runs repeatedly, forever, to create the animated effect
     func draw() {
         
+        canvas.drawShapesWithBorders = false
+        
         //three circles going right
         for n in 0...2{
             
