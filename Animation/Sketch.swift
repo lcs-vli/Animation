@@ -7,11 +7,9 @@ class Sketch : NSObject {
     //       Therefore, the line immediately below must always be present.
     let canvas : Canvas
     
-    // Position of circle
-    var x : Double
     
-    let xstartingPosition = Double(random(from: 10, to: 490))
-    let ystartingPosition = Double(random(from: 10, to: 490))
+    var x = Double(random(from: 10, to: 490))
+    var y = Double(random(from: 10, to: 490))
     
     let black = Color(hue:100, saturation: 100, brightness: 0, alpha: 100)
     let white = Color(hue:0, saturation: 0, brightness: 100, alpha: 100)
@@ -22,8 +20,8 @@ class Sketch : NSObject {
         // Create canvas object – specify size
         canvas = Canvas(width: 500, height: 500)
         
-        // Set starting position
-        x = 0
+        
+        canvas.drawShapesWithBorders = false
         
     }
     
@@ -31,27 +29,44 @@ class Sketch : NSObject {
     func draw() {
         
         
-        // Change position
-        x += 0.5
-        
-        canvas.drawShapesWithBorders = false
-        
-        canvas.fillColor = black
-        
-        // Draw an ellipse in a random place
-        canvas.drawEllipse(at: Point(x: xstartingPosition + x, y: ystartingPosition + x), width: 50, height: 50)
-        
-        //change the color
-        canvas.fillColor = white
-        
-        //drwa a rectanlge to cover up the trace
-        canvas.drawEllipse(at: Point(x: xstartingPosition + x, y: ystartingPosition + x), width: 50, height: 50)
-        
-        
-        //xstartingPosition + x == 0 || xstartingPosition + x == 500||ystartingPosition + x == 500 || ystartingPosition + x == 0
-        
-        
-        
+        if x <= 0 || x >= 500{
+            
+            //change the color
+            canvas.fillColor = white
+            //drwa a rectanlge to cover up the trace
+            canvas.drawEllipse(at: Point(x: 1000 - x, y: y), width: 53, height: 53)
+            x += 3
+            y += 3
+            canvas.fillColor = black
+            // Draw an ellipse in a random place
+            canvas.drawEllipse(at: Point(x: 1000 - x, y: y), width: 50, height: 50)
+            
+        } else if y <= 0 || y >= 500{
+            
+            //change the color
+            canvas.fillColor = white
+            //drwa a rectanlge to cover up the trace
+            canvas.drawEllipse(at: Point(x: x, y: 1000 - y), width: 53, height: 53)
+            x += 3
+            y += 3
+            canvas.fillColor = black
+            // Draw an ellipse in a random place
+            canvas.drawEllipse(at: Point(x: x, y: 1000 - y), width: 50, height: 50)
+            
+        }else{
+            
+            //change the color
+            canvas.fillColor = white
+            //drwa a rectanlge to cover up the trace
+            canvas.drawEllipse(at: Point(x: x, y: y), width: 53, height: 53)
+            x += 3
+            y += 3
+            canvas.fillColor = black
+            // Draw an ellipse in a random place
+            canvas.drawEllipse(at: Point(x: x, y: y), width: 50, height: 50)
+            
+        }
+            
     }
     
 }
