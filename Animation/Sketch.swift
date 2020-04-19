@@ -8,13 +8,13 @@ class Sketch : NSObject {
     let canvas : Canvas
     
     // Position of circle
-    var x : Int
+    var x : Double
     
-    let xstartingPosition = Int(random(from: 10, to: 490))
-    let ystartingPosition = Int(random(from: 10, to: 490))
+    let xstartingPosition = Double(random(from: 10, to: 490))
+    let ystartingPosition = Double(random(from: 10, to: 490))
     
+    let black = Color(hue:100, saturation: 100, brightness: 0, alpha: 100)
     let white = Color(hue:0, saturation: 0, brightness: 100, alpha: 100)
-    let black = Color(hue:0, saturation: 0, brightness: 0, alpha: 100)
     
     // This function runs once
     override init() {
@@ -29,21 +29,26 @@ class Sketch : NSObject {
     
     // This function runs repeatedly, forever, to create the animated effect
     func draw() {
-
+        
         
         // Change position
-        x += 10
-        
-        canvas.fillColor = black
-        
-        // Draw an ellipse in the middle of the canvas
-        canvas.drawEllipse(at: Point(x: xstartingPosition + x, y: ystartingPosition + x), width: 50, height: 50)
+        x += 0.5
         
         canvas.drawShapesWithBorders = false
         
+        canvas.fillColor = black
+        
+        // Draw an ellipse in a random place
+        canvas.drawEllipse(at: Point(x: xstartingPosition + x, y: ystartingPosition + x), width: 50, height: 50)
+        
+        //change the color
         canvas.fillColor = white
         
-        canvas.drawRectangle(at: Point(x: xstartingPosition + x - 25, y: ystartingPosition + x - 25), width: 50, height: 50)
+        //drwa a rectanlge to cover up the trace
+        canvas.drawEllipse(at: Point(x: xstartingPosition + x, y: ystartingPosition + x), width: 50, height: 50)
+        
+        
+        //xstartingPosition + x == 0 || xstartingPosition + x == 500||ystartingPosition + x == 500 || ystartingPosition + x == 0
         
         
         
