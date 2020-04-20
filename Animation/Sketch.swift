@@ -29,7 +29,7 @@ class Sketch : NSObject {
     func draw() {
         
         
-        if x <= 0 || x >= 500{
+        if x >= 500, y < 500{
             
             //change the color
             canvas.fillColor = white
@@ -41,7 +41,7 @@ class Sketch : NSObject {
             // Draw an ellipse in a random place
             canvas.drawEllipse(at: Point(x: 1000 - x, y: y), width: 50, height: 50)
             
-        } else if y <= 0 || y >= 500{
+        } else if y >= 500, x < 500{
             
             //change the color
             canvas.fillColor = white
@@ -53,7 +53,7 @@ class Sketch : NSObject {
             // Draw an ellipse in a random place
             canvas.drawEllipse(at: Point(x: x, y: 1000 - y), width: 50, height: 50)
             
-        }else{
+        }else if x < 500, y < 500{
             
             //change the color
             canvas.fillColor = white
@@ -64,8 +64,28 @@ class Sketch : NSObject {
             canvas.fillColor = black
             // Draw an ellipse in a random place
             canvas.drawEllipse(at: Point(x: x, y: y), width: 50, height: 50)
+        } else if x >= 500, y >= 500{
             
+            //change the color
+            canvas.fillColor = white
+            //drwa a rectanlge to cover up the trace
+            canvas.drawEllipse(at: Point(x: 1000 - x, y: 1000 - y), width: 53, height: 53)
+            x += 3
+            y += 3
+            canvas.fillColor = black
+            // Draw an ellipse in a random place
+            canvas.drawEllipse(at: Point(x: 1000 - x, y: 1000 - y), width: 50, height: 50)
         }
+        
+        if x >= 1000{
+            x = 0
+        }
+        if y >= 1000{
+            y = 0
+        }
+        
+        print(x)
+        print(y)
             
     }
     
