@@ -10,6 +10,10 @@ class Sketch : NSObject {
     // Position of circle
     var x : Int
     
+    //colors
+    var white = Color(hue: 0, saturation: 0, brightness: 100, alpha: 100)
+    var black = Color(hue: 0, saturation: 0, brightness: 0, alpha: 100)
+    
     // This function runs once
     override init() {
         
@@ -17,18 +21,38 @@ class Sketch : NSObject {
         canvas = Canvas(width: 500, height: 500)
         
         // Set starting position
-        x = 250
+        x = 0
+        
+        canvas.drawShapesWithFill = false
+        
+        
         
     }
     
     // This function runs repeatedly, forever, to create the animated effect
     func draw() {
         
-        // Change position
+        canvas.borderColor = white
+        if x >= 500{
+            canvas.drawEllipse(at: Point(x: 1000 - x, y: 250), width: 250, height: 250)
+        }else if x < 500{
+            canvas.drawEllipse(at: Point(x: x, y: 250), width: 250, height: 250)
+        }
+        
         x += 1
         
-        // Draw an ellipse in the middle of the canvas
-        canvas.drawEllipse(at: Point(x: x, y: 250), width: 50, height: 50)
+        canvas.borderColor = black
+        
+        if x >= 500{
+            canvas.drawEllipse(at: Point(x: 1000 - x, y: 250), width: 250, height: 250)
+        }else if x < 500{
+            canvas.drawEllipse(at: Point(x: x, y: 250), width: 250, height: 250)
+        }
+        
+        
+        if x == 1000{
+            x = 0
+        }
         
     }
     
