@@ -122,7 +122,7 @@ class Sketch : NSObject {
             yLine = 1000 - y
         }
         
-        if sqrt( pow (x1Line - xLine, 2) + pow (yLine - 250, 2)) <= 180{
+        if yLine > 100, yLine < 400 {
             canvas.drawLine(from: Point(x: xLine, y: 250), to: Point(x: x1Line, y: yLine))
         }
         
